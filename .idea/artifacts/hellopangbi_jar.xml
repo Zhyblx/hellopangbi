@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact name="hellopangbi:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/hellopangbi_jar</output-path>
+    <root id="root">
+      <element id="archive" name="hellopangbi.jar">
+        <element id="module-output" name="hellopangbi" />
+      </element>
+      <element id="library" level="project" name="KotlinJavaRuntime" />
+      <element id="library" level="project" name="lib" />
+    </root>
+  </artifact>
+</component>
