@@ -3,6 +3,7 @@ package hellowindow;
 import calendar.Controller;
 import calendar.JuheCalendar;
 import lang.WeekMap;
+import util.Log;
 
 import java.text.SimpleDateFormat;
 import java.util.Timer;
@@ -36,21 +37,21 @@ public class HelloWindow {
                 TodayWeather todayWeather=new TodayWeather();//天气情况
 
                 System.out.println("|----------------------------------------------------------|");
+                System.out.println("|-----------------------HelloPangBi------------------------|");
+                System.out.println("|----------------------------------------------------------|");
                 System.out.println("|-------------------" + strDate + " " + weekMap.getWeek(week) + "-------------------|");
                 System.out.println("|----------------------------------------------------------|");
                 System.out.println("|                     " + "Need work:" + needWork + "                      |");
+                System.out.println("|----------------------------------------------------------|");
                 System.out.println("|-------------------------HangZhou-------------------------|");
                 System.out.println("|                                                          |");
-                System.out.println("|                                                          |");
-                System.out.println("|                                                          |");
                 todayWeather.getTodayWeather(); // 天气占了6行
-                System.out.println("|                                                          |");
-                System.out.println("|                                                          |");
                 System.out.println("|                                                          |");
                 System.out.println("|                                                          |");
                 System.out.println("|----------------------------------------------------------|");
 
             } catch (Exception e) {
+                Log.setLog(e.toString());
                 e.printStackTrace();
 
             }

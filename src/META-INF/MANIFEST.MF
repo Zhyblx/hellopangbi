@@ -1,4 +1,4 @@
-Manifest-Version: 1.0
+Manifest-Version: 1.1.2
 Main-Class: hellowindow.HelloWindow
 Class-Path: kotlin-stdlib.jar kotlin-reflect.jar kotlin-test.jar kotlin-
  stdlib-jdk7.jar kotlin-stdlib-jdk8.jar datecapsule.jar jsoup-1.12.1.jar
