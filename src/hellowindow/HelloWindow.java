@@ -47,6 +47,7 @@ public class HelloWindow {
                 System.out.println("|                                                          |");
                 todayWeather.getTodayWeather(); // 天气占了6行
                 System.out.println("|                                                          |");
+                System.out.println("|                                                 "+todayWeather.getTemperature()+"°C"+"     |");
                 System.out.println("|                                                          |");
                 System.out.println("|----------------------------------------------------------|");
 

@@ -15,7 +15,7 @@ public class HelloWorld {
 //            System.out.println(juheCalendar.getCalendar("2020-11-14"));
 //            System.out.println(juheCalendar.getCalendar("2020-11-15"));
 
-            System.out.println(new JuheWeather().getCityWeatherID("1512"));
+//            System.out.println(new JuheWeather().getCityWeatherID("1512"));
 
         } catch (Exception e) {
             e.printStackTrace();

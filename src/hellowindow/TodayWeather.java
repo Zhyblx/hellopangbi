@@ -7,56 +7,72 @@ public class TodayWeather {
 
     private JuheWeather juheWeather = new JuheWeather();
     private ArtTable artTable = new ArtTable();
+    private String[] weatherID;
+
+    {
+        try {
+            weatherID = juheWeather.getCityWeatherData("1512");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     public void getTodayWeather() throws Exception {
-        String weatherID=juheWeather.getCityWeatherID("1512");
+
 //        String weatherID = "26";
 
         // 晴
-        if (weatherID.equals("00")) {
+        if (weatherID[0].equals("00")) {
             artTable.getSunArtTableRun();
 
         }
 
         // 云
-        if (weatherID.equals("02") || weatherID.equals("20")) {
+        if (weatherID[0].equals("02") || weatherID[0].equals("20")) {
             artTable.getCloudArtTableRun();
 
         }
 
         // 多云
-        if (weatherID.equals("01") || weatherID.equals("18") ||
-                weatherID.equals("29") || weatherID.equals("30") ||
-                weatherID.equals("31") || weatherID.equals("53")) {
+        if (weatherID[0].equals("01") || weatherID[0].equals("18") ||
+                weatherID[0].equals("29") || weatherID[0].equals("30") ||
+                weatherID[0].equals("31") || weatherID[0].equals("53")) {
             artTable.getCloudyArtTableRun();
 
         }
 
         //雨
-        if (weatherID.equals("06") || weatherID.equals("07") || weatherID.equals("08") || weatherID.equals("09")
-                || weatherID.equals("10") || weatherID.equals("11") || weatherID.equals("12") || weatherID.equals("19")
-                || weatherID.equals("21") || weatherID.equals("22") || weatherID.equals("23") || weatherID.equals("24") || weatherID.equals("25")) {
+        if (weatherID[0].equals("06") || weatherID[0].equals("07") || weatherID[0].equals("08") || weatherID[0].equals("09")
+                || weatherID[0].equals("10") || weatherID[0].equals("11") || weatherID[0].equals("12") || weatherID[0].equals("19")
+                || weatherID[0].equals("21") || weatherID[0].equals("22") || weatherID[0].equals("23") || weatherID[0].equals("24") || weatherID[0].equals("25")) {
             artTable.getDownpourArtTableRun();
 
         }
 
         //阵雨
-        if (weatherID.equals("03") || weatherID.equals("04") || weatherID.equals("05")) {
+        if (weatherID[0].equals("03") || weatherID[0].equals("04") || weatherID[0].equals("05")) {
             artTable.getShowerArtTableRun();
 
         }
 
         //雪
-        if(weatherID.equals("13")|| weatherID.equals("14")|| weatherID.equals("15")|| weatherID.equals("16")
-                || weatherID.equals("17")|| weatherID.equals("26")|| weatherID.equals("27")|| weatherID.equals("28")){
+        if (weatherID[0].equals("13") || weatherID[0].equals("14") || weatherID[0].equals("15") || weatherID[0].equals("16")
+                || weatherID[0].equals("17") || weatherID[0].equals("26") || weatherID[0].equals("27") || weatherID.equals("28")) {
             artTable.getSnowArtTableRun();
 
         }
     }
 
+    public String getTemperature() {
+        return this.weatherID[1];
+
+    }
+
     public static void main(String[] args) {
         try {
-            new TodayWeather().getTodayWeather();
+            TodayWeather todayWeather = new TodayWeather();
+            todayWeather.getTodayWeather();
+            System.out.println(todayWeather.getTemperature());
 
         } catch (Exception e) {
             e.printStackTrace();

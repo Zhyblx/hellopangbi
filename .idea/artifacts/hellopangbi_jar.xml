@@ -5,8 +5,8 @@
       <element id="archive" name="hellopangbi.jar">
         <element id="module-output" name="hellopangbi" />
       </element>
-      <element id="library" level="project" name="KotlinJavaRuntime" />
       <element id="library" level="project" name="lib" />
+      <element id="library" level="project" name="KotlinJavaRuntime" />
     </root>
   </artifact>
 </component>
