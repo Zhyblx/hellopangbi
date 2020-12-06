@@ -36,7 +36,7 @@ public class HelloWindow {
 
                 TodayWeather todayWeather=new TodayWeather();//天气情况
 
-                System.out.println("|----------------------------------------------------------|");
+                System.out.println("+----------------------------------------------------------+");
                 System.out.println("|-----------------------HelloPangBi------------------------|");
                 System.out.println("|----------------------------------------------------------|");
                 System.out.println("|-------------------" + strDate + " " + weekMap.getWeek(week) + "-------------------|");
@@ -49,7 +49,7 @@ public class HelloWindow {
                 System.out.println("|                                                          |");
                 System.out.println("|                                                 "+todayWeather.getTemperature()+"°C"+"     |");
                 System.out.println("|                                                          |");
-                System.out.println("|----------------------------------------------------------|");
+                System.out.println("+----------------------------------------------------------+");
 
             } catch (Exception e) {
                 Log.setLog(e.toString());

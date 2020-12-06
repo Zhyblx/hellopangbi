@@ -70,9 +70,9 @@ public class TodayWeather {
 
     public static void main(String[] args) {
         try {
-            TodayWeather todayWeather = new TodayWeather();
-            todayWeather.getTodayWeather();
-            System.out.println(todayWeather.getTemperature());
+//            TodayWeather todayWeather = new TodayWeather();
+//            todayWeather.getTodayWeather();
+//            System.out.println(todayWeather.getTemperature());
 
         } catch (Exception e) {
             e.printStackTrace();
