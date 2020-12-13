@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="usb4">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/lib/usb4" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/lib/usb4" recursive="false" />
+  </library>
+</component>
