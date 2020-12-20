@@ -3,10 +3,8 @@ package hellowindow;
 import calendar.Controller;
 import calendar.JuheCalendar;
 import gpio.ControlMotor;
-import gpio.StepperMotor;
 import lang.WeekMap;
 import usb.HelloUSB;
-import util.Log;
 
 import java.text.SimpleDateFormat;
 import java.util.Scanner;
@@ -56,7 +54,6 @@ public class HelloWindow {
                 System.out.println("+----------------------------------------------------------+");
 
             } catch (Exception e) {
-                Log.setLog(e.toString());
                 e.printStackTrace();
 
             }
