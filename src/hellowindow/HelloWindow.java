@@ -3,6 +3,7 @@ package hellowindow;
 import calendar.Controller;
 import calendar.JuheCalendar;
 import gpio.ControlMotor;
+import lang.SarsCovSupervisoryControl;
 import lang.WeekMap;
 import usb.HelloUSB;
 
@@ -37,20 +38,36 @@ public class HelloWindow {
                 }
 
                 TodayWeather todayWeather = new TodayWeather();//天气情况
+                SarsCovSupervisoryControl sarsCovSupervisoryControl = new SarsCovSupervisoryControl();// 新冠病毒数据
+
+                //System.out.println("+----------------------------------------------------------+");
+                //System.out.println("|-----------------------HelloPangBi------------------------|");
+                //System.out.println("|----------------------------------------------------------|");
+                //System.out.println("|-------------------" + strDate + " " + weekMap.getWeek(week) + "-------------------|");
+                //System.out.println("|----------------------------------------------------------|");
+                //System.out.println("|                     " + "Need work:" + needWork + "                      |");
+                //System.out.println("|----------------------------------------------------------|");
+                //System.out.println("|-------------------------HangZhou-------------------------|");
+                //System.out.println("|                                                          |");
+                //todayWeather.getTodayWeather(); // 天气占了6行
+                //System.out.println("|                                                          |");
+                //System.out.println("|                                                 " + todayWeather.getTemperature() + "°C" + "     |");
+                //System.out.println("|                                                          |");
+                //System.out.println("+----------------------------------------------------------+");
 
                 System.out.println("+----------------------------------------------------------+");
-                System.out.println("|-----------------------HelloPangBi------------------------|");
-                System.out.println("|----------------------------------------------------------|");
-                System.out.println("|-------------------" + strDate + " " + weekMap.getWeek(week) + "-------------------|");
-                System.out.println("|----------------------------------------------------------|");
-                System.out.println("|                     " + "Need work:" + needWork + "                      |");
-                System.out.println("|----------------------------------------------------------|");
-                System.out.println("|-------------------------HangZhou-------------------------|");
-                System.out.println("|                                                          |");
+                System.out.println("[HangZhou]");
+                System.out.println("      Date:" + strDate);
+                System.out.println("      Week:" + weekMap.getWeek(week));
+                System.out.println("      NeedWork:" + needWork);
+                System.out.println("      SARS-CoV-2:" + sarsCovSupervisoryControl.getHangZhouSarsCovData());
+                System.out.println("      Temperature:" + todayWeather.getTemperature() + "°C");
+                System.out.println("      Meteorological:");
+                System.out.println("");
                 todayWeather.getTodayWeather(); // 天气占了6行
-                System.out.println("|                                                          |");
-                System.out.println("|                                                 " + todayWeather.getTemperature() + "°C" + "     |");
-                System.out.println("|                                                          |");
+                System.out.println("");
+                System.out.println("");
+                System.out.println("                     Version: 20201226");
                 System.out.println("+----------------------------------------------------------+");
 
             } catch (Exception e) {

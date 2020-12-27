@@ -17,13 +17,12 @@ HelloPangBi是一个应用于树莓派控制硬件的Java项目。我寄托于�
 
 
 ### 作品橱窗
+>>>>>![avatar](./makerimage/20201227成品.jpg)
 >>>>>![avatar](./makerimage/20201220成品.jpg)
 >>>>>![avatar](./makerimage/20201220作品图1.jpg)
 >>>>>![avatar](./makerimage/20201220作品图2.jpg)
 >>>>>![avatar](./makerimage/20201220作品图3.jpg)
 >>>>>![avatar](./makerimage/20201220作品图4.jpg)
->>>>>![avatar](./makerimage/20201220语音模块1.jpg)
->>>>>![avatar](./makerimage/20201220语音模块2.jpg)
 >>>>>![avatar](./makerimage/20201220材料图1.jpg)
 
 上述图片中展示了HelloPangBi的阶段成果。目前，它在我生活中的主要应用包括：<br>
@@ -102,6 +101,7 @@ BCM2835和wiringPi这样我们才可以访问GPIO引脚实现控制树莓派的�
 |usb|HelloUSB|getUSBPowerSupply|---|void|控制USB电源|
 |lang|WeekMap|getWeek(String strWeek)|strWeek：星期一~星期天|String|返回星期一~星期天的英文翻译|
 |lang|ArtTable|---|---|void|此类用于画作晴、云、多云、雨、阵雨、雪等天气图形|
+|lang|SarsCovSupervisoryControl|getHangZhouSarsCovData()|---|String|(监控)返回当前杭州新冠病毒当前确认数据|
 |hellowindow|TodayWeather|getTodayWeather()|---|void|展示天气图形化|
 |hellowindow|TodayWeather|getTemperature()|---|String|返回当天气温数据|
 |hellowindow|HelloWindow|main(String[] args)|String[] args|static void|程序运行主入口|
