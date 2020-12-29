@@ -16,13 +16,14 @@ import org.json.JSONArray;
 public class SarsCovSupervisoryControl {
 
     /**
-     * 返回当前杭州新冠病毒当前确认数据
+     * 返回当前杭州新冠病毒当前确认数据；数据格式：确诊病例/疑似病例
      * @return
      * @throws Exception
      */
 
     public String getHangZhouSarsCovData() throws Exception {
         String currentConfirmedCount = "";
+        String suspectedCount="";
         Connection connection = Jsoup.connect("https://api.yonyoucloud.com/apis/dst/ncov/spreadQuery");
         connection.ignoreContentType(true);
         connection.userAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36");
@@ -42,13 +43,14 @@ public class SarsCovSupervisoryControl {
                     if (jsonObject2.toString().indexOf("杭州") != -1) {
                         //System.out.println(jsonObject2);
                         currentConfirmedCount = jsonObject2.get("currentConfirmedCount").toString();
+                        suspectedCount=jsonObject2.get("suspectedCount").toString();
 //                        System.out.println(currentConfirmedCount);
 
                     }
                 }
             }
         }
-        return currentConfirmedCount;
+        return currentConfirmedCount+"|"+suspectedCount;
 
     }
 

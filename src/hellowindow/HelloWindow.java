@@ -67,7 +67,7 @@ public class HelloWindow {
                 todayWeather.getTodayWeather(); // 天气占了6行
                 System.out.println("");
                 System.out.println("");
-                System.out.println("                     Version: 20201226");
+                System.out.println("                       Version: 2020.3");
                 System.out.println("+----------------------------------------------------------+");
 
             } catch (Exception e) {
