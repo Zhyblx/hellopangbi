@@ -50,7 +50,7 @@ public class SarsCovSupervisoryControl {
                 }
             }
         }
-        return currentConfirmedCount+"|"+suspectedCount;
+        return "\033[41;30;4m"+currentConfirmedCount+ "\033[0m"+"|"+"\033[34;4m"+suspectedCount+"\033[0m";
 
     }
 
