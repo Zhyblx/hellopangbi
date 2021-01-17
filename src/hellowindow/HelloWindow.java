@@ -60,14 +60,14 @@ public class HelloWindow {
                 System.out.println("      Date:" + strDate);
                 System.out.println("      Week:" + weekMap.getWeek(week));
                 System.out.println("      NeedWork:" + needWork);
-                System.out.println("      SARS-CoV-2:" + sarsCovSupervisoryControl.getHangZhouSarsCovData());
+                System.out.println("      SARS-CoV-2:" + sarsCovSupervisoryControl.getHangZhouSarsCovData() +"   "+ "[LiShui:+" + sarsCovSupervisoryControl.getLiShuiSarsCovData() + "]");
                 System.out.println("      Temperature:" + todayWeather.getTemperature() + "°C");
                 System.out.println("      Meteorological:");
                 System.out.println("");
                 todayWeather.getTodayWeather(); // 天气占了6行
                 System.out.println("");
                 System.out.println("");
-                System.out.println("                       Version: 2020.3");
+                System.out.println("                       Version: 2021.1");
                 System.out.println("+----------------------------------------------------------+");
 
             } catch (Exception e) {
