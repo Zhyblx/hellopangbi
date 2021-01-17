@@ -16,14 +16,12 @@ import org.json.JSONArray;
 public class SarsCovSupervisoryControl {
 
     /**
-     * 返回当前杭州新冠病毒当前确认数据；数据格式：确诊病例/疑似病例
+     * 返回查询地区新冠病毒数据情况；数据格式：确诊病例/疑似病例
      * @return
      * @throws Exception
      */
 
-    public String getHangZhouSarsCovData() throws Exception {
-        String currentConfirmedCount = "";
-        String suspectedCount="";
+    private Document getDocument() throws Exception{
         Connection connection = Jsoup.connect("https://api.yonyoucloud.com/apis/dst/ncov/spreadQuery");
         connection.ignoreContentType(true);
         connection.userAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36");
@@ -31,6 +29,15 @@ public class SarsCovSupervisoryControl {
         connection.header("authoration", "apicode");
         connection.header("apicode", "0eb1de471c8640cf8160e41ffcc7b374");
         Document document = connection.get();
+
+        return document;
+
+    }
+
+    public String getHangZhouSarsCovData() throws Exception {
+        Document document=this.getDocument();
+        String currentConfirmedCount = "";
+        String suspectedCount="";
 //        System.out.println(document.text());
         JSONObject jsonObject = new JSONObject(document.text());
         JSONArray jsonArray = jsonObject.getJSONArray("newslist");
@@ -55,16 +62,9 @@ public class SarsCovSupervisoryControl {
     }
 
     public String getLiShuiSarsCovData() throws Exception {
+        Document document=this.getDocument();
         String currentConfirmedCount = "";
         String suspectedCount="";
-        Connection connection = Jsoup.connect("https://api.yonyoucloud.com/apis/dst/ncov/spreadQuery");
-        connection.ignoreContentType(true);
-        connection.userAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36");
-        connection.timeout(10000);
-        connection.header("authoration", "apicode");
-        connection.header("apicode", "0eb1de471c8640cf8160e41ffcc7b374");
-        Document document = connection.get();
-//        System.out.println(document.text());
         JSONObject jsonObject = new JSONObject(document.text());
         JSONArray jsonArray = jsonObject.getJSONArray("newslist");
         for (int i = 0; i < jsonArray.length(); i++) {
