@@ -63,9 +63,21 @@ public class TodayWeather {
         }
     }
 
+    /**
+     * 当前气温
+     * @return
+     */
     public String getTemperature() {
         return this.weatherID[1];
 
+    }
+
+    /**
+     * 当天气温
+     * @return
+     */
+    public String getDateTemperature(){
+        return this.weatherID[2];
     }
 
     public static void main(String[] args) {

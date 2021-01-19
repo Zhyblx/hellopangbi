@@ -85,6 +85,31 @@ public class SarsCovSupervisoryControl {
         }
         return "\033[31;4m"+currentConfirmedCount+ "\033[0m"+"|"+"\033[34;4m"+suspectedCount+"\033[0m";
 
+    }
+
+    public String getJiaXingSarsCovData() throws Exception {
+        Document document=this.getDocument();
+        String currentConfirmedCount = "";
+        String suspectedCount="";
+        JSONObject jsonObject = new JSONObject(document.text());
+        JSONArray jsonArray = jsonObject.getJSONArray("newslist");
+        for (int i = 0; i < jsonArray.length(); i++) {
+            JSONObject jsonObject1 = jsonArray.getJSONObject(i);
+            if (jsonObject1.toString().indexOf("浙江") != -1) {
+                JSONArray jsonArray1 = jsonObject1.getJSONArray("cities");
+                for (int j = 0; j < jsonArray1.length(); j++) {
+                    JSONObject jsonObject2 = jsonArray1.getJSONObject(j);
+                    if (jsonObject2.toString().indexOf("嘉兴") != -1) {
+                        //System.out.println(jsonObject2);
+                        currentConfirmedCount = jsonObject2.get("currentConfirmedCount").toString();
+                        suspectedCount=jsonObject2.get("suspectedCount").toString();
+//                        System.out.println(currentConfirmedCount);
+
+                    }
+                }
+            }
+        }
+        return "\033[31;4m"+currentConfirmedCount+ "\033[0m"+"|"+"\033[34;4m"+suspectedCount+"\033[0m";
 
     }
 
