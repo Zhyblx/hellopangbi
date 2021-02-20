@@ -38,26 +38,36 @@ public class SarsCovSupervisoryControl {
         Document document=this.getDocument();
         String currentConfirmedCount = "";
         String suspectedCount="";
+        String info="";
 //        System.out.println(document.text());
         JSONObject jsonObject = new JSONObject(document.text());
-        JSONArray jsonArray = jsonObject.getJSONArray("newslist");
-        for (int i = 0; i < jsonArray.length(); i++) {
-            JSONObject jsonObject1 = jsonArray.getJSONObject(i);
-            if (jsonObject1.toString().indexOf("浙江") != -1) {
-                JSONArray jsonArray1 = jsonObject1.getJSONArray("cities");
-                for (int j = 0; j < jsonArray1.length(); j++) {
-                    JSONObject jsonObject2 = jsonArray1.getJSONObject(j);
-                    if (jsonObject2.toString().indexOf("杭州") != -1) {
-                        //System.out.println(jsonObject2);
-                        currentConfirmedCount = jsonObject2.get("currentConfirmedCount").toString();
-                        suspectedCount=jsonObject2.get("suspectedCount").toString();
+        try{
+            JSONArray jsonArray = jsonObject.getJSONArray("newslist");
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObject1 = jsonArray.getJSONObject(i);
+                if (jsonObject1.toString().indexOf("浙江") != -1) {
+                    JSONArray jsonArray1 = jsonObject1.getJSONArray("cities");
+                    for (int j = 0; j < jsonArray1.length(); j++) {
+                        JSONObject jsonObject2 = jsonArray1.getJSONObject(j);
+                        if (jsonObject2.toString().indexOf("杭州") != -1) {
+                            //System.out.println(jsonObject2);
+                            currentConfirmedCount = jsonObject2.get("currentConfirmedCount").toString();
+                            suspectedCount=jsonObject2.get("suspectedCount").toString();
 //                        System.out.println(currentConfirmedCount);
 
+                        }
                     }
                 }
             }
+            info="\033[31;4m"+currentConfirmedCount+ "\033[0m"+"|"+"\033[34;4m"+suspectedCount+"\033[0m";
+
+        }catch(Exception e){
+            info="null";
+
         }
-        return "\033[31;4m"+currentConfirmedCount+ "\033[0m"+"|"+"\033[34;4m"+suspectedCount+"\033[0m";
+
+
+        return info;
 
     }
 
@@ -65,25 +75,35 @@ public class SarsCovSupervisoryControl {
         Document document=this.getDocument();
         String currentConfirmedCount = "";
         String suspectedCount="";
+        String info="";
         JSONObject jsonObject = new JSONObject(document.text());
-        JSONArray jsonArray = jsonObject.getJSONArray("newslist");
-        for (int i = 0; i < jsonArray.length(); i++) {
-            JSONObject jsonObject1 = jsonArray.getJSONObject(i);
-            if (jsonObject1.toString().indexOf("浙江") != -1) {
-                JSONArray jsonArray1 = jsonObject1.getJSONArray("cities");
-                for (int j = 0; j < jsonArray1.length(); j++) {
-                    JSONObject jsonObject2 = jsonArray1.getJSONObject(j);
-                    if (jsonObject2.toString().indexOf("丽水") != -1) {
-                        //System.out.println(jsonObject2);
-                        currentConfirmedCount = jsonObject2.get("currentConfirmedCount").toString();
-                        suspectedCount=jsonObject2.get("suspectedCount").toString();
+        try{
+            JSONArray jsonArray = jsonObject.getJSONArray("newslist");
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObject1 = jsonArray.getJSONObject(i);
+                if (jsonObject1.toString().indexOf("浙江") != -1) {
+                    JSONArray jsonArray1 = jsonObject1.getJSONArray("cities");
+                    for (int j = 0; j < jsonArray1.length(); j++) {
+                        JSONObject jsonObject2 = jsonArray1.getJSONObject(j);
+                        if (jsonObject2.toString().indexOf("丽水") != -1) {
+                            //System.out.println(jsonObject2);
+                            currentConfirmedCount = jsonObject2.get("currentConfirmedCount").toString();
+                            suspectedCount=jsonObject2.get("suspectedCount").toString();
 //                        System.out.println(currentConfirmedCount);
 
+                        }
                     }
                 }
             }
+            info="\033[31;4m"+currentConfirmedCount+ "\033[0m"+"|"+"\033[34;4m"+suspectedCount+"\033[0m";
+
+        }catch(Exception e){
+            info="null";
+
         }
-        return "\033[31;4m"+currentConfirmedCount+ "\033[0m"+"|"+"\033[34;4m"+suspectedCount+"\033[0m";
+
+
+        return info;
 
     }
 
@@ -91,25 +111,33 @@ public class SarsCovSupervisoryControl {
         Document document=this.getDocument();
         String currentConfirmedCount = "";
         String suspectedCount="";
+        String info="";
         JSONObject jsonObject = new JSONObject(document.text());
-        JSONArray jsonArray = jsonObject.getJSONArray("newslist");
-        for (int i = 0; i < jsonArray.length(); i++) {
-            JSONObject jsonObject1 = jsonArray.getJSONObject(i);
-            if (jsonObject1.toString().indexOf("浙江") != -1) {
-                JSONArray jsonArray1 = jsonObject1.getJSONArray("cities");
-                for (int j = 0; j < jsonArray1.length(); j++) {
-                    JSONObject jsonObject2 = jsonArray1.getJSONObject(j);
-                    if (jsonObject2.toString().indexOf("嘉兴") != -1) {
-                        //System.out.println(jsonObject2);
-                        currentConfirmedCount = jsonObject2.get("currentConfirmedCount").toString();
-                        suspectedCount=jsonObject2.get("suspectedCount").toString();
+        try{
+            JSONArray jsonArray = jsonObject.getJSONArray("newslist");
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObject1 = jsonArray.getJSONObject(i);
+                if (jsonObject1.toString().indexOf("浙江") != -1) {
+                    JSONArray jsonArray1 = jsonObject1.getJSONArray("cities");
+                    for (int j = 0; j < jsonArray1.length(); j++) {
+                        JSONObject jsonObject2 = jsonArray1.getJSONObject(j);
+                        if (jsonObject2.toString().indexOf("嘉兴") != -1) {
+                            //System.out.println(jsonObject2);
+                            currentConfirmedCount = jsonObject2.get("currentConfirmedCount").toString();
+                            suspectedCount=jsonObject2.get("suspectedCount").toString();
 //                        System.out.println(currentConfirmedCount);
 
+                        }
                     }
                 }
             }
+            info="\033[31;4m"+currentConfirmedCount+ "\033[0m"+"|"+"\033[34;4m"+suspectedCount+"\033[0m";
+
+        }catch(Exception e){
+            info="null";
+
         }
-        return "\033[31;4m"+currentConfirmedCount+ "\033[0m"+"|"+"\033[34;4m"+suspectedCount+"\033[0m";
+        return info;
 
     }
 
